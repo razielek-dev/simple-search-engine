@@ -1,0 +1,16 @@
+plugins {
+    id 'java'
+}
+
+group 'szczegielniak.krystian'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile "org.spockframework:spock-core:1.1-groovy-2.4-rc-2"
+}
