@@ -1,0 +1,25 @@
+This is the implementation of a simple search engine based on provided specification.
+
+I decided to use gradle as a build tool therefore running the engine client application
+from the command line should be as simple as calling:
+
+./gradlew run
+
+from the root project directory.
+The only external dependency is Spock testing framework which I use for Unit Tests so no build issues should occur.
+
+Some implementation decisions I made:
+- As I am not using any IOC container, wherever applicable I will be using simple singletons
+  to avoid unnecessary object creation.
+- As the Search Engine is the only thing that the client application is concerned of,
+  all classes except szczegielniak.krystian.engine.SearchEngine are package scoped
+  and considered a implementation detail of the Engine itself.
+- I could have used some logging library for messages (SLF4J, java.util.Logger),
+  but I stick to System.out.printlns because it makes the output readable enough without any pre-configuring.
+- The Search Engine enables the update of an index. Updating the index with a new document has time complexity
+  linear in respect to number of tokens in the document.
+- Calculation of TF-IDF weights for documents related to a given term happens only when user queries for a term
+  for which no query was performed since last Index update for this term. It amortizes the cost of presenting the
+  results in sorted order a little.
+
+In case of any questions I look forward to meeting You ^^
