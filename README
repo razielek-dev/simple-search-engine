@@ -8,6 +8,9 @@ from the command line should be as simple as calling:
 from the root project directory.
 The only external dependency is Spock testing framework which I use for Unit Tests so no build issues should occur.
 
+The way in which you can use the application is displayed by the application itself when You run it.
+Displayed message contains an example scenario in which both indexing and querying is shown.
+
 Some implementation decisions I made:
 - As I am not using any IOC container, wherever applicable I will be using simple singletons
   to avoid unnecessary object creation.
